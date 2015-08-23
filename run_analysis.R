@@ -1,16 +1,15 @@
-# This analysis is relative a Course Project of course "Getting and Cleaning Data, part of Data Science Specialization.
+# This function performs the analysis on the Course Project "Getting and Cleaning Data", part of Specialization in Data Science.
+# First step is to merge Training and Test Data.
+# Secont step is to generate the stats.
 
 source("mergeTrainingAndTestData.R")
-source("generateMeanAndSdForMergedData.R")
 source("generateStatsDataset.R")
 
 main.run <- function() {
 
-    mergeTrainingAndTestData()
+    readyData <- mergeTrainingAndTestData()
 
-    generateMeanAndSdForMergedData()
-
-    generateStatsDataset()
+    generateStatsDataset(readyData)
     
 } 
 
