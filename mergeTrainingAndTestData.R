@@ -3,11 +3,14 @@
 library(dplyr)
 library(reshape2)
 
-featuresLabels <- read.csv2("./data/UCI HAR Dataset/features.txt", header=FALSE, sep="", col.names=c("feature_id","feature_name"), na.strings="NA")
-#featuresLabels$feature_name <- paste("",featuresLabels$feature_name,sep="")
+# read the common feature list
+featuresFile <- "./data/UCI HAR Dataset/features.txt"
+featuresLabels <- read.csv2(featuresFile, header=FALSE, sep="", col.names=c("feature_id","feature_name"), na.strings="NA")
 featuresLabels$feature_name <- gsub("[^[:alnum:][:blank:]+?&/\\-]", "", featuresLabels$feature_name)
 
-actLabels <- read.csv2("./data/UCI HAR Dataset/activity_labels.txt", header=FALSE, sep="", col.names=c("activity_id","activity_name"), na.strings="NA")
+# read the common activitiesList
+activitiesFile <- "./data/UCI HAR Dataset/activity_labels.txt"
+actLabels <- read.csv2(activitiesFile, header=FALSE, sep="", col.names=c("activity_id","activity_name"), na.strings="NA")
 
 source("collectTestData.R")
 source("collectTrainData.R")
