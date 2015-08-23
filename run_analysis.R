@@ -1,0 +1,1 @@
+# This analysis is relative a Course Project of course "Getting and Cleaning Data, part of Data Science Specialization.
